@@ -9,7 +9,7 @@ public class Even {
         int correctAnswers = 0;
         while (correctAnswers < 3) {
             int randomNum = RandomUtils.nextInt(1, 100);
-            System.out.println(String.format("Question: %s", randomNum));
+            System.out.printf("Question: %d", randomNum);
             System.out.print("Your answer: ");
             String userAnswer = InputScanner.returnLine();
 
