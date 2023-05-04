@@ -8,7 +8,7 @@ class App {
         String gameNumber = InputScanner.returnLine();
         switch (gameNumber) {
             case "2":
-                Even.evenNumbers();
+                Even.guessEvenOrOddNumbers();
                 break;
             case "1":
                 Cli.greeting();

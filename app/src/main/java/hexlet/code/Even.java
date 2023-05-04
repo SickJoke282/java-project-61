@@ -3,11 +3,11 @@ package hexlet.code;
 import org.apache.commons.lang3.RandomUtils;
 
 public class Even {
-    public static void evenNumbers() {
+    public static void guessEvenOrOddNumbers() {
         String userName = Cli.greeting();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-        int i = 0;
-        while (i < 3) {
+        int correctAnswers = 0;
+        while (correctAnswers < 3) {
             int randomNum = RandomUtils.nextInt(1, 100);
             System.out.println(String.format("Question: %s", randomNum));
             System.out.print("Your answer: ");
@@ -15,7 +15,7 @@ public class Even {
 
             if (randomNum % 2 == 0 && userAnswer.equals("yes") || randomNum % 2 != 0 && userAnswer.equals("no")) {
                 System.out.println("Correct!");
-                i += 1;
+                correctAnswers += 1;
             } else {
                 if (userAnswer.equals("yes")) {
                     System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.");
@@ -27,7 +27,7 @@ public class Even {
                 break;
             }
         }
-        if (i == 3) {
+        if (correctAnswers == 3) {
             System.out.println("Congratulations, " + userName + "!");
         } else {
             System.out.println("Let's try again, " + userName + "!");
