@@ -5,9 +5,7 @@ import org.apache.commons.lang3.RandomUtils;
 public class Even {
     public static void evenNumbers() {
         String userName = Cli.greeting();
-
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-
         int i = 0;
         while (i < 3) {
             int randomNum = RandomUtils.nextInt(1, 100);
