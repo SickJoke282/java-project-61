@@ -23,7 +23,7 @@ public class GCD {
                 System.out.println("Correct!");
                 correctAnswers += 1;
             } else {
-                writeAboutIncorrectAnswers(userAnswer, answer);
+                Engine.writeAboutIncorrectAnswers(userAnswer, answer);
                 break;
             }
         }
@@ -46,9 +46,5 @@ public class GCD {
             return num1;
         }
 
-    }
-    public static void writeAboutIncorrectAnswers(String userAnswer, int answer) {
-        System.out.printf("'%s' is wrong answer ;(. Correct answer was '%d'.", userAnswer, answer);
-        System.out.println();
     }
 }
