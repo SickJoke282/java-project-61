@@ -1,9 +1,7 @@
-.gradle/
+.gitignore
 .idea/
 build/
 gradle/
 *.gradle
-gradlew
-gradlew.bat
 Makefile
 config/
