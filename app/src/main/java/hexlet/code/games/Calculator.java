@@ -10,7 +10,7 @@ public class Calculator {
         String userName = Cli.greeting();
         System.out.println("What is the result of the expression?");
         int correctAnswers = 0;
-        String Operator = "";
+        String operator = "";
         while (correctAnswers < 3) {
             int answer = 0;
             int randomNum1 = RandomUtils.nextInt(1, 100);
@@ -18,19 +18,20 @@ public class Calculator {
             int indexOfOperator = RandomUtils.nextInt(1, 4);
             switch (indexOfOperator) {
                 case 1 -> {
-                    Operator = "+";
+                    operator = "+";
                     answer = randomNum1 + randomNum2;
                 }
                 case 2 -> {
-                    Operator = "-";
+                    operator = "-";
                     answer = randomNum1 - randomNum2;
                 }
                 case 3 -> {
-                    Operator = "*";
+                    operator = "*";
                     answer = randomNum1 * randomNum2;
                 }
+                default -> { }
             }
-            System.out.printf("Question: %d %s %d", randomNum1, Operator, randomNum2);
+            System.out.printf("Question: %d %s %d", randomNum1, operator, randomNum2);
             System.out.println();
             System.out.print("Your answer: ");
             String userAnswer = InputScanner.returnLine();
