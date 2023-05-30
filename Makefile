@@ -1,8 +1,8 @@
 install:
-    ./gradlew clean install
+	./app/gradlew clean install
 
 run-dist:
-    ./build/install/app/bin/app
+	./app/build/install/java-project-61/bin/java-project-61
 
 run:
-    ./gradlew run 
+	./app/gradlew run
