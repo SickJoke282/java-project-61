@@ -10,7 +10,7 @@ public class Prime {
         String userName = Cli.greeting();
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         int correctAnswers = 0;
-        while (correctAnswers < 3) {
+        while (correctAnswers < Engine.TOTAL_CORRECT_ANSWERS) {
             System.out.print("Question: ");
             String answer = createRandomNumber();
             System.out.print("Your answer: ");

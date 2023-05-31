@@ -6,16 +6,17 @@ import hexlet.code.InputScanner;
 import org.apache.commons.lang3.RandomUtils;
 
 public class Calculator {
+    final static int MAX_INDEX = 4;
     public static void calcNumbers() {
         String userName = Cli.greeting();
         System.out.println("What is the result of the expression?");
         int correctAnswers = 0;
         String operator = "";
-        while (correctAnswers < 3) {
+        while (correctAnswers < Engine.TOTAL_CORRECT_ANSWERS) {
             int answer = 0;
-            int randomNum1 = RandomUtils.nextInt(1, 100);
-            int randomNum2 = RandomUtils.nextInt(1, 100);
-            int indexOfOperator = RandomUtils.nextInt(1, 4);
+            int randomNum1 = RandomUtils.nextInt(1, Engine.MAX_RANDOM_NUM);
+            int randomNum2 = RandomUtils.nextInt(1, Engine.MAX_RANDOM_NUM);
+            int indexOfOperator = RandomUtils.nextInt(1, MAX_INDEX);
             switch (indexOfOperator) {
                 case 1 -> {
                     operator = "+";

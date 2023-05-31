@@ -11,8 +11,8 @@ public class GCD {
         System.out.println("Find the greatest common divisor of given numbers.");
         int correctAnswers = 0;
         while (correctAnswers < 3) {
-            int randomNum1 = RandomUtils.nextInt(1, 100);
-            int randomNum2 = RandomUtils.nextInt(1, 100);
+            int randomNum1 = RandomUtils.nextInt(1, Engine.MAX_RANDOM_NUM);
+            int randomNum2 = RandomUtils.nextInt(1, Engine.MAX_RANDOM_NUM);
             int answer = calculateGCD(randomNum1, randomNum2);
             System.out.printf("Question: %d %d", randomNum1, randomNum2);
             System.out.println();

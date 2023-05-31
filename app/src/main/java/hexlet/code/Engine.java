@@ -1,6 +1,8 @@
 package hexlet.code;
 
 public class Engine {
+    public final static int TOTAL_CORRECT_ANSWERS = 3;
+    public final static int MAX_RANDOM_NUM = 100;
     public static void writeAboutIncorrectAnswers(String userAnswer, int answer) {
         System.out.printf("'%s' is wrong answer ;(. Correct answer was '%d'.", userAnswer, answer);
         System.out.println();
@@ -15,7 +17,7 @@ public class Engine {
         }
     }
     public static void writeCongratsOrTryAgain(int correctAnswers, String userName) {
-        if (correctAnswers == 3) {
+        if (correctAnswers == TOTAL_CORRECT_ANSWERS) {
             System.out.println("Congratulations, " + userName + "!");
         } else {
             System.out.println("Let's try again, " + userName + "!");
