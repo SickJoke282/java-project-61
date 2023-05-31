@@ -11,7 +11,7 @@ public class Even {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         int correctAnswers = 0;
         while (correctAnswers < Engine.TOTAL_CORRECT_ANSWERS) {
-            int randomNum = RandomUtils.nextInt(1, 100);
+            int randomNum = RandomUtils.nextInt(1, Engine.MAX_RANDOM_NUM);
             System.out.printf("Question: %d", randomNum);
             System.out.println();
             System.out.print("Your answer: ");

@@ -27,7 +27,7 @@ public class Prime {
         Engine.writeCongratsOrTryAgain(correctAnswers, userName);
     }
     public static String createRandomNumber() {
-        int number = RandomUtils.nextInt(2, 100);
+        int number = RandomUtils.nextInt(2, Engine.MAX_RANDOM_NUM);
         System.out.println(number);
         for (int i = 2; i < number; i++) {
             if (number % i == 0) {

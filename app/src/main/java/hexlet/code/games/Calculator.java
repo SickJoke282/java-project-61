@@ -6,7 +6,7 @@ import hexlet.code.InputScanner;
 import org.apache.commons.lang3.RandomUtils;
 
 public class Calculator {
-    final static int MAX_INDEX = 4;
+    static final int MAX_INDEX = 4;
     public static void calcNumbers() {
         String userName = Cli.greeting();
         System.out.println("What is the result of the expression?");

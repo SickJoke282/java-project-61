@@ -6,8 +6,9 @@ import hexlet.code.InputScanner;
 import org.apache.commons.lang3.RandomUtils;
 
 public class Progression {
-    final static int MAX_NUMBER_IN_PROGRESSION = 10;
-    final static int MAX_PROGRESSION_LENGTH = 11;
+    static final int MAX_NUMBER_IN_PROGRESSION = 10;
+    static final int MIN_PROGRESSION_LENGTH = 5;
+    static final int MAX_PROGRESSION_LENGTH = 11;
     public static void guessNumberInProgression() {
         String userName = Cli.greeting();
         System.out.println("What number is missing in the progression?");
@@ -30,7 +31,7 @@ public class Progression {
         Engine.writeCongratsOrTryAgain(correctAnswers, userName);
     }
     public static int createProgression() {
-        int progressionLength = RandomUtils.nextInt(5, MAX_PROGRESSION_LENGTH);
+        int progressionLength = RandomUtils.nextInt(MIN_PROGRESSION_LENGTH, MAX_PROGRESSION_LENGTH);
         int firstNumber = RandomUtils.nextInt(1, MAX_NUMBER_IN_PROGRESSION);
         int incremental = RandomUtils.nextInt(2, MAX_NUMBER_IN_PROGRESSION);
         int indexOfHiddenNumber = RandomUtils.nextInt(1, progressionLength);

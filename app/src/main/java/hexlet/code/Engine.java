@@ -1,8 +1,8 @@
 package hexlet.code;
 
 public class Engine {
-    public final static int TOTAL_CORRECT_ANSWERS = 3;
-    public final static int MAX_RANDOM_NUM = 100;
+    public static final int TOTAL_CORRECT_ANSWERS = 3;
+    public static final int MAX_RANDOM_NUM = 100;
     public static void writeAboutIncorrectAnswers(String userAnswer, int answer) {
         System.out.printf("'%s' is wrong answer ;(. Correct answer was '%d'.", userAnswer, answer);
         System.out.println();

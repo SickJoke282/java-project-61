@@ -10,7 +10,7 @@ public class GCD {
         String userName = Cli.greeting();
         System.out.println("Find the greatest common divisor of given numbers.");
         int correctAnswers = 0;
-        while (correctAnswers < 3) {
+        while (correctAnswers < Engine.TOTAL_CORRECT_ANSWERS) {
             int randomNum1 = RandomUtils.nextInt(1, Engine.MAX_RANDOM_NUM);
             int randomNum2 = RandomUtils.nextInt(1, Engine.MAX_RANDOM_NUM);
             int answer = calculateGCD(randomNum1, randomNum2);
