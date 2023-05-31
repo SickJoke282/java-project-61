@@ -13,3 +13,6 @@ GCD game
 
 Progression game
 [![asciicast](https://asciinema.org/a/4TFW5cfityODqjNF2DA0rYPeM.svg)](https://asciinema.org/a/4TFW5cfityODqjNF2DA0rYPeM)
+
+Prime game
+[![asciicast](https://asciinema.org/a/7MHPA46sn6qFz7kcyGxnzfTLj.svg)](https://asciinema.org/a/7MHPA46sn6qFz7kcyGxnzfTLj)
