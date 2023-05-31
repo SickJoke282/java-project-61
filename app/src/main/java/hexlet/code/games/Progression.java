@@ -31,7 +31,7 @@ public class Progression {
         int progressionLength = RandomUtils.nextInt(5, 11);
         int firstNumber = RandomUtils.nextInt(1, 10);
         int incremental = RandomUtils.nextInt(2, 10);
-        int indexOfHiddenNumber = RandomUtils.nextInt(1, progressionLength + 1);
+        int indexOfHiddenNumber = RandomUtils.nextInt(1, progressionLength+1);
         int i = 0;
         int temp = firstNumber;
         int answer = 0;
