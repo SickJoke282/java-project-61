@@ -31,13 +31,13 @@ public class GCD {
     }
     public static int calculateGCD(int num1, int num2) {
         if (num1 > num2) {
-            while (num1 % num2 != 0) {
+            if (num1 % num2 != 0) {
                 num1 = num1 % num2;
                 return calculateGCD(num2, num1);
             }
             return num2;
         } else if (num2 > num1) {
-            while (num2 % num1 != 0) {
+            if (num2 % num1 != 0) {
                 num2 = num2 % num1;
                 return calculateGCD(num1, num2);
             }
