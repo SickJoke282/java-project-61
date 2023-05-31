@@ -26,7 +26,7 @@ public class Calculator {
                     operator = "-";
                     answer = randomNum1 - randomNum2;
                 }
-                case 3 -> {
+                case MAX_INDEX - 1 -> {
                     operator = "*";
                     answer = randomNum1 * randomNum2;
                 }
