@@ -29,6 +29,7 @@ public class Calculator {
                     operator = "*";
                     answer = randomNum1 * randomNum2;
                 }
+                default -> { }
             }
             System.out.printf("Question: %d %s %d", randomNum1, operator, randomNum2);
             System.out.println();
