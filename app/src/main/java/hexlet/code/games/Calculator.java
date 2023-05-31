@@ -60,7 +60,7 @@ public class Calculator {
                 break;
             case MAX_INDEX - 1:
                 operator = operations[MAX_INDEX - 1];
-            default: { }
+            default:
         }
         return operator;
     }
