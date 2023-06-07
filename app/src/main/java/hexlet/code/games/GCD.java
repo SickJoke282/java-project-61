@@ -6,7 +6,7 @@ import org.apache.commons.lang3.RandomUtils;
 public class GCD {
     public static void findGCD() {
         String description = "Find the greatest common divisor of given numbers.";
-        String[][] rounds = new String[3][2];
+        String[][] rounds = new String[Engine.TOTAL_CORRECT_ANSWERS][2];
         for (int i = 0; i < rounds.length; i++) {
             int randomNum1 = RandomUtils.nextInt(1, Engine.MAX_RANDOM_NUM);
             int randomNum2 = RandomUtils.nextInt(1, Engine.MAX_RANDOM_NUM);

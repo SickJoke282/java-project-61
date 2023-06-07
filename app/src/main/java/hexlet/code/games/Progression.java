@@ -9,7 +9,7 @@ public class Progression {
     static final int MAX_PROGRESSION_LENGTH = 11;
     public static void guessNumberInProgression() {
         String description = "What number is missing in the progression?";
-        String[][] rounds = new String[3][2];
+        String[][] rounds = new String[Engine.TOTAL_CORRECT_ANSWERS][2];
         for (int i = 0; i < rounds.length; i++) {
             String[] answers = createProgression();
             rounds[i][0] = "Question: " + answers[0];

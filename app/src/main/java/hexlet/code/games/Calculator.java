@@ -7,7 +7,7 @@ public class Calculator {
     static final int MAX_INDEX = 3;
     public static void calcNumbers() {
         String description = "What is the result of the expression?";
-        String[][] rounds = new String[3][2];
+        String[][] rounds = new String[Engine.TOTAL_CORRECT_ANSWERS][2];
         String[] operations = {"+", "-", "*"};
         for (int i = 0; i < rounds.length; i++) {
             int randomNum1 = RandomUtils.nextInt(1, Engine.MAX_RANDOM_NUM);
@@ -15,7 +15,7 @@ public class Calculator {
             int indexOfOperator = RandomUtils.nextInt(0, MAX_INDEX);
             String operator = defineAnOperator(operations, indexOfOperator);
             int answer = calculate(operator, randomNum1, randomNum2);
-            rounds[i][0] = "Question: " + randomNum1 + " "+ operator + " " + randomNum2;
+            rounds[i][0] = "Question: " + randomNum1 + " " + operator + " " + randomNum2;
             rounds[i][1] = Integer.toString(answer);
         }
         Engine.doLogic(description, rounds);

@@ -6,7 +6,7 @@ import org.apache.commons.lang3.RandomUtils;
 public class Even {
     public static void guessEvenOrOddNumbers() {
         String description = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-        String[][] rounds = new String[3][2];
+        String[][] rounds = new String[Engine.TOTAL_CORRECT_ANSWERS][2];
         for (int i = 0; i < rounds.length; i++) {
             int randomNum = RandomUtils.nextInt(1, Engine.MAX_RANDOM_NUM);
             rounds[i][0] = "Question: " + randomNum;
