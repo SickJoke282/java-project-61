@@ -1,33 +1,20 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
 import hexlet.code.Engine;
-import hexlet.code.InputScanner;
 import org.apache.commons.lang3.RandomUtils;
 
 public class GCD {
     public static void findGCD() {
-        String userName = Cli.greeting();
-        System.out.println("Find the greatest common divisor of given numbers.");
-        int correctAnswers = 0;
-        while (correctAnswers < Engine.TOTAL_CORRECT_ANSWERS) {
+        String description = "Find the greatest common divisor of given numbers.";
+        String[][] rounds = new String[3][2];
+        for (int i = 0; i < rounds.length; i++) {
             int randomNum1 = RandomUtils.nextInt(1, Engine.MAX_RANDOM_NUM);
             int randomNum2 = RandomUtils.nextInt(1, Engine.MAX_RANDOM_NUM);
             int answer = calculateGCD(randomNum1, randomNum2);
-            System.out.printf("Question: %d %d", randomNum1, randomNum2);
-            System.out.println();
-            System.out.print("Your answer: ");
-            String userAnswer = InputScanner.returnLine();
-
-            if (answer == Integer.parseInt(userAnswer)) {
-                System.out.println("Correct!");
-                correctAnswers += 1;
-            } else {
-                Engine.writeAboutIncorrectAnswers(userAnswer, answer);
-                break;
-            }
+            rounds[i][0] = "Question: " + randomNum1 + " " + randomNum2;
+            rounds[i][1] = Integer.toString(answer);
         }
-        Engine.writeCongratsOrTryAgain(correctAnswers, userName);
+        Engine.doLogic(description, rounds);
     }
     public static int calculateGCD(int num1, int num2) {
         if (num1 > num2) {

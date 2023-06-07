@@ -1,8 +1,6 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
 import hexlet.code.Engine;
-import hexlet.code.InputScanner;
 import org.apache.commons.lang3.RandomUtils;
 
 public class Progression {
@@ -10,27 +8,16 @@ public class Progression {
     static final int MIN_PROGRESSION_LENGTH = 5;
     static final int MAX_PROGRESSION_LENGTH = 11;
     public static void guessNumberInProgression() {
-        String userName = Cli.greeting();
-        System.out.println("What number is missing in the progression?");
-        int correctAnswers = 0;
-        while (correctAnswers < Engine.TOTAL_CORRECT_ANSWERS) {
-            System.out.print("Question: ");
-            int answer = createProgression();
-            System.out.println();
-            System.out.print("Your answer: ");
-            String userAnswer = InputScanner.returnLine();
-
-            if (answer == Integer.parseInt(userAnswer)) {
-                System.out.println("Correct!");
-                correctAnswers += 1;
-            } else {
-                Engine.writeAboutIncorrectAnswers(userAnswer, answer);
-                break;
-            }
+        String description = "What number is missing in the progression?";
+        String[][] rounds = new String[3][2];
+        for (int i = 0; i < rounds.length; i++) {
+            String[] answers = createProgression();
+            rounds[i][0] = "Question: " + answers[0];
+            rounds[i][1] = answers[1];
         }
-        Engine.writeCongratsOrTryAgain(correctAnswers, userName);
+        Engine.doLogic(description, rounds);
     }
-    public static int createProgression() {
+    public static String[] createProgression() {
         int progressionLength = RandomUtils.nextInt(MIN_PROGRESSION_LENGTH, MAX_PROGRESSION_LENGTH);
         int firstNumber = RandomUtils.nextInt(1, MAX_NUMBER_IN_PROGRESSION);
         int incremental = RandomUtils.nextInt(2, MAX_NUMBER_IN_PROGRESSION);
@@ -38,16 +25,20 @@ public class Progression {
         int i = 0;
         int temp = firstNumber;
         int answer = 0;
+        String progression = "";
+        String[] answers = new String[2];
         while (i < progressionLength) {
             if (indexOfHiddenNumber == i) {
-                System.out.print(".. ");
+                progression += ".. ";
                 answer = temp;
             } else {
-                System.out.printf("%d ", temp);
+                progression += temp + " ";
             }
             temp += incremental;
             i++;
         }
-        return answer;
+        answers[0] = progression;
+        answers[1] = Integer.toString(answer);
+        return answers;
     }
 }

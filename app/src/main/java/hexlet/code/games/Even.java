@@ -1,30 +1,21 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
 import hexlet.code.Engine;
-import hexlet.code.InputScanner;
 import org.apache.commons.lang3.RandomUtils;
 
 public class Even {
     public static void guessEvenOrOddNumbers() {
-        String userName = Cli.greeting();
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-        int correctAnswers = 0;
-        while (correctAnswers < Engine.TOTAL_CORRECT_ANSWERS) {
+        String description = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+        String[][] rounds = new String[3][2];
+        for (int i = 0; i < rounds.length; i++) {
             int randomNum = RandomUtils.nextInt(1, Engine.MAX_RANDOM_NUM);
-            System.out.printf("Question: %d", randomNum);
-            System.out.println();
-            System.out.print("Your answer: ");
-            String userAnswer = InputScanner.returnLine();
-
-            if (randomNum % 2 == 0 && userAnswer.equals("yes") || randomNum % 2 != 0 && userAnswer.equals("no")) {
-                System.out.println("Correct!");
-                correctAnswers += 1;
+            rounds[i][0] = "Question: " + randomNum;
+            if (randomNum % 2 == 0) {
+                rounds[i][1] = "yes";
             } else {
-                Engine.writeAboutIncorrectAnswers(userAnswer);
-                break;
+                rounds[i][1] = "no";
             }
         }
-        Engine.writeCongratsOrTryAgain(correctAnswers, userName);
+        Engine.doLogic(description, rounds);
     }
 }
