@@ -21,6 +21,8 @@ public class Engine {
             System.out.println("Let's try again, " + userName + "!");
             break;
         }
-        if (correctAnswers == TOTAL_CORRECT_ANSWERS) System.out.println("Congratulations, " + userName + "!");
+        if (correctAnswers == TOTAL_CORRECT_ANSWERS) {
+            System.out.println("Congratulations, " + userName + "!");
+        }
     }
 }
