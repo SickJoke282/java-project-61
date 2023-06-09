@@ -13,7 +13,7 @@ public class Calculator {
             int randomNum1 = RandomUtils.nextInt(1, Engine.MAX_RANDOM_NUM);
             int randomNum2 = RandomUtils.nextInt(1, Engine.MAX_RANDOM_NUM);
             int indexOfOperator = RandomUtils.nextInt(0, MAX_INDEX);
-            String operator = defineAnOperator(operations, indexOfOperator);
+            String operator = operations[indexOfOperator];
             int answer = calculate(operator, randomNum1, randomNum2);
             rounds[i][0] = "Question: " + randomNum1 + " " + operator + " " + randomNum2;
             rounds[i][1] = Integer.toString(answer);
@@ -35,20 +35,5 @@ public class Calculator {
                 return 0;
             }
         }
-    }
-    static String defineAnOperator(String[] operations, int indexOfOperator) {
-        String operator = "";
-        switch (indexOfOperator) {
-            case 0:
-                operator = operations[0];
-                break;
-            case 1:
-                operator = operations[1];
-                break;
-            case MAX_INDEX - 1:
-                operator = operations[MAX_INDEX - 1];
-            default:
-        }
-        return operator;
     }
 }
