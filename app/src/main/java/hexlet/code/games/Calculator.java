@@ -5,7 +5,7 @@ import org.apache.commons.lang3.RandomUtils;
 
 public class Calculator {
     static final int MAX_INDEX = 3;
-    public static void calcNumbers() {
+    public static void calcNumbers() throws Exception {
         String description = "What is the result of the expression?";
         String[][] rounds = new String[Engine.TOTAL_CORRECT_ANSWERS][2];
         String[] operations = {"+", "-", "*"};
@@ -15,12 +15,12 @@ public class Calculator {
             int indexOfOperator = RandomUtils.nextInt(0, MAX_INDEX);
             String operator = operations[indexOfOperator];
             int answer = calculate(operator, randomNum1, randomNum2);
-            rounds[i][0] = "Question: " + randomNum1 + " " + operator + " " + randomNum2;
+            rounds[i][0] = randomNum1 + " " + operator + " " + randomNum2;
             rounds[i][1] = Integer.toString(answer);
         }
         Engine.doLogic(description, rounds);
     }
-    static int calculate(String operator, int randomNum1, int randomNum2) {
+    static int calculate(String operator, int randomNum1, int randomNum2) throws Exception {
         switch (operator) {
             case "+" -> {
                 return randomNum1 + randomNum2;
@@ -31,9 +31,7 @@ public class Calculator {
             case "*" -> {
                 return randomNum1 * randomNum2;
             }
-            default -> {
-                return 0;
-            }
+            default -> throw new Exception("Unknown operator");
         }
     }
 }

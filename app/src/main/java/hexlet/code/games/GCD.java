@@ -11,7 +11,7 @@ public class GCD {
             int randomNum1 = RandomUtils.nextInt(1, Engine.MAX_RANDOM_NUM);
             int randomNum2 = RandomUtils.nextInt(1, Engine.MAX_RANDOM_NUM);
             int answer = calculateGCD(randomNum1, randomNum2);
-            rounds[i][0] = "Question: " + randomNum1 + " " + randomNum2;
+            rounds[i][0] = randomNum1 + " " + randomNum2;
             rounds[i][1] = Integer.toString(answer);
         }
         Engine.doLogic(description, rounds);

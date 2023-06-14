@@ -11,16 +11,16 @@ public class Progression {
         String description = "What number is missing in the progression?";
         String[][] rounds = new String[Engine.TOTAL_CORRECT_ANSWERS][2];
         for (int i = 0; i < rounds.length; i++) {
-            String[] answers = createProgression();
-            rounds[i][0] = "Question: " + answers[0];
+            int progressionLength = RandomUtils.nextInt(MIN_PROGRESSION_LENGTH, MAX_PROGRESSION_LENGTH);
+            int firstNumber = RandomUtils.nextInt(1, MAX_NUMBER_IN_PROGRESSION);
+            int incremental = RandomUtils.nextInt(2, MAX_NUMBER_IN_PROGRESSION);
+            String[] answers = createProgression(progressionLength, firstNumber, incremental);
+            rounds[i][0] = answers[0];
             rounds[i][1] = answers[1];
         }
         Engine.doLogic(description, rounds);
     }
-    public static String[] createProgression() {
-        int progressionLength = RandomUtils.nextInt(MIN_PROGRESSION_LENGTH, MAX_PROGRESSION_LENGTH);
-        int firstNumber = RandomUtils.nextInt(1, MAX_NUMBER_IN_PROGRESSION);
-        int incremental = RandomUtils.nextInt(2, MAX_NUMBER_IN_PROGRESSION);
+    public static String[] createProgression(int progressionLength, int firstNumber, int incremental) {
         int indexOfHiddenNumber = RandomUtils.nextInt(1, progressionLength);
         int i = 0;
         int temp = firstNumber;

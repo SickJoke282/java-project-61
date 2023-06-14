@@ -10,7 +10,7 @@ public class Prime {
         for (int i = 0; i < rounds.length; i++) {
             int number = RandomUtils.nextInt(2, Engine.MAX_RANDOM_NUM);
             boolean answer = isNumberPrime(number);
-            rounds[i][0] = "Question: " + number;
+            rounds[i][0] = Integer.toString(number);
             if (answer) {
                 rounds[i][1] = "yes";
             } else {
@@ -20,7 +20,7 @@ public class Prime {
         Engine.doLogic(description, rounds);
     }
     public static boolean isNumberPrime(int number) {
-        if (number == 1) {
+        if (number < 2) {
             return false;
         }
         for (int i = 2; i < number; i++) {

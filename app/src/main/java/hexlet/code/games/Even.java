@@ -9,7 +9,7 @@ public class Even {
         String[][] rounds = new String[Engine.TOTAL_CORRECT_ANSWERS][2];
         for (int i = 0; i < rounds.length; i++) {
             int randomNum = RandomUtils.nextInt(1, Engine.MAX_RANDOM_NUM);
-            rounds[i][0] = "Question: " + randomNum;
+            rounds[i][0] = Integer.toString(randomNum);
             if (randomNum % 2 == 0) {
                 rounds[i][1] = "yes";
             } else {
