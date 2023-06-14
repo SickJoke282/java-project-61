@@ -34,7 +34,7 @@ class App {
             case "0":
                 break;
             default:
-                break;
+                throw new Exception("Your input was incorrect");
         }
     }
 }
