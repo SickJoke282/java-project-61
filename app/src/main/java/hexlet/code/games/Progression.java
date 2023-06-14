@@ -18,7 +18,7 @@ public class Progression {
             rounds[i][0] = answers[0];
             rounds[i][1] = answers[1];
         }
-        Engine.doLogic(description, rounds);
+        Engine.doLogicAndInteractWithUser(description, rounds);
     }
     public static String[] createProgression(int progressionLength, int firstNumber, int incremental) {
         int indexOfHiddenNumber = RandomUtils.nextInt(1, progressionLength);

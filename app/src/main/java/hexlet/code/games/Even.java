@@ -16,6 +16,6 @@ public class Even {
                 rounds[i][1] = "no";
             }
         }
-        Engine.doLogic(description, rounds);
+        Engine.doLogicAndInteractWithUser(description, rounds);
     }
 }

@@ -17,7 +17,7 @@ public class Prime {
                 rounds[i][1] = "no";
             }
         }
-        Engine.doLogic(description, rounds);
+        Engine.doLogicAndInteractWithUser(description, rounds);
     }
     public static boolean isNumberPrime(int number) {
         if (number < 2) {

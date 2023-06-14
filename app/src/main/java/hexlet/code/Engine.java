@@ -4,15 +4,10 @@ public class Engine {
     public static final int TOTAL_CORRECT_ANSWERS = 3;
     public static final int MAX_RANDOM_NUM = 100;
 
-    public static String greeting() {
-        System.out.println("Welcome to the Brain Games!");
-        System.out.print("May I have your name? ");
+    public static void doLogicAndInteractWithUser(String description, String[][] rounds) {
+        System.out.print("Welcome to the Brain Games!\nMay I have your name? ");
         String userName = InputScanner.returnLine();
         System.out.println("Hello, " + userName + "!");
-        return userName;
-    }
-    public static void doLogic(String description, String[][] rounds) {
-        String userName = greeting();
         System.out.println(description);
         for (String[] round : rounds) {
             System.out.println("Question: " + round[0]);

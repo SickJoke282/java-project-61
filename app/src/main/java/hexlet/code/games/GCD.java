@@ -14,7 +14,7 @@ public class GCD {
             rounds[i][0] = randomNum1 + " " + randomNum2;
             rounds[i][1] = Integer.toString(answer);
         }
-        Engine.doLogic(description, rounds);
+        Engine.doLogicAndInteractWithUser(description, rounds);
     }
     public static int calculateGCD(int num1, int num2) {
         if (num2 != 0) {

@@ -18,7 +18,7 @@ public class Calculator {
             rounds[i][0] = randomNum1 + " " + operator + " " + randomNum2;
             rounds[i][1] = Integer.toString(answer);
         }
-        Engine.doLogic(description, rounds);
+        Engine.doLogicAndInteractWithUser(description, rounds);
     }
     static int calculate(String operator, int randomNum1, int randomNum2) throws Exception {
         switch (operator) {
