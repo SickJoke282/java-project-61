@@ -22,23 +22,17 @@ public class Progression {
     }
     public static String[] createProgression(int progressionLength, int firstNumber, int incremental) {
         int indexOfHiddenNumber = RandomUtils.nextInt(1, progressionLength);
-        int i = 0;
         int temp = firstNumber;
-        int answer = 0;
-        String progression = "";
+        String[] progression = new String[progressionLength];
         String[] answers = new String[2];
-        while (i < progressionLength) {
-            if (indexOfHiddenNumber == i) {
-                progression += ".. ";
-                answer = temp;
-            } else {
-                progression += temp + " ";
-            }
+        for (int i = 0; i < progressionLength; i++) {
+            progression[i] = Integer.toString(temp);
             temp += incremental;
-            i++;
         }
-        answers[0] = progression;
-        answers[1] = Integer.toString(answer);
+        String answer = progression[indexOfHiddenNumber];
+        progression[indexOfHiddenNumber] = "..";
+        answers[0] = String.join(" ", progression);
+        answers[1] = answer;
         return answers;
     }
 }

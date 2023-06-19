@@ -6,12 +6,15 @@ import hexlet.code.games.GCD;
 import hexlet.code.games.Progression;
 import hexlet.code.games.Prime;
 
+import java.util.Scanner;
+
 class App {
     public static void main(String[] args) throws Exception {
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet\n2 - Even\n3 - Calc\n4 - GCD\n5 - Progression\n6 - Prime\n0 - Exit");
         System.out.print("Your choice: ");
-        String gameNumber = InputScanner.returnLine();
+        String gameNumber = scanner.nextLine();
         switch (gameNumber) {
             case "6":
                 Prime.guessPrimeNumber();
